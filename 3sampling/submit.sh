@@ -3,6 +3,6 @@
 run_start=$1
 run_end=$2
 
-pjsub -N ytva_smp_${run_start}_${run_end} \
+pjsub -N yd_3_${run_start}_${run_end} \
   --bulk --sparam ${run_start}-${run_end} \
   $YTVA_DARK_PROTONATED_PREFIX/3sampling/job.sh
