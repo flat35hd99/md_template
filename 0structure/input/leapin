@@ -18,7 +18,7 @@ saveAmberParm system output/system.dry.prmtop output/system.dry.crd
 solvateOct system TIP3PBOX 10 iso
 
 addIons2 system Na+ 0
-addIonsRand system Na+ 20 Cl- 20
+addIonsRand system Na+ 21 Cl- 21
 
 check system
 savepdb system output/system.pdb

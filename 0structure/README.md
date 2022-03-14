@@ -14,23 +14,22 @@ You can reproduce my works following process:
 2. Run `create_amber_input.sh`
 3. Run `parmed -p output/system.dry.prmtop -c output/system.dry.crd -i input/parmed.input --no-splash > log/summary_of_system_dry.log` to check the mass of system + ligand
 4. Check the number of Ions using [SLTCAP](https://www.phys.ksu.edu/personal/schmit/SLTCAP/SLTCAP.html)
-   1. Protein mass (kDa) is `29.9593440`
+   1. Protein mass (kDa) is `29.9633760`
    2. Solution salt concentration (mM/l) is `150`
-   3. Net charge of solutes (proton charge units) is `-25`
-   4. Number of water molecules is `12373`. This value is from `Added 12373 residues.` on `log/leap_stdout.log`
+   3. Net charge of solutes (proton charge units) is `-21`
+   4. Number of water molecules is `12365`. This value is from `Added 12373 residues.` on `log/leap_stdout.log`
    5. I left other blanks as blanks
-   6. The result show `Your system requires 20.16 anions and 45.16 cations.`
+   6. The result show `Your system requires 21.43 anions and 42.43 cations.`
 5. Change ion number
 ```diff
 addIons2 system Na+ 0
-- addIonsRand system Na+ 35 Cl- 35
-+ addIonsRand system Na+ 20 Cl- 20
+- addIonsRand system Na+ 20 Cl- 20
++ addIonsRand system Na+ 21 Cl- 21
 ```
 6. Run `create_amber_input.sh` again
 7. Run `md5sum output/* > checksum` in `0structure` directory
 8. To calculate side chain heat conductivity, we want atomgroup file. Run `create_atomgroup_sidechain.sh`
 9. Re-run `md5sum output/* > checksum` in `0structure` directory
-10. To resolve unknown issue to grouping in `curp/compute.py`, I added residue atomgroup file. Run `pjsub -N ytva_get_group create_atomgroup.sh`. Run `md5sum output/* > checksum` when the job finished.
 
 `parmed` step output
 
@@ -41,9 +40,9 @@ Number of cations:     0
 Number of anions:      0
 Num. of solvent mols:  0
 Num. of unknown res:   2
-Total charge (e-):     -25.0000
-Total mass (amu):      29959.3440
-Number of atoms:       4144
+Total charge (e-):     -21.0000
+Total mass (amu):      29963.3760
+Number of atoms:       4148
 Number of residues:    255
 Residue set:           ALA, ARG, ASN, ASP, CYS, FMN, GLN
                        GLU, GLY, HID, HIE, HIP, ILE, LEU
@@ -53,8 +52,6 @@ Residue count:         ALA: 8, ARG: 6, ASN: 18, ASP: 20, CYS: 2, FMN: 2, GLN: 16
                        GLU: 26, GLY: 14, HID: 2, HIE: 1, HIP: 1, ILE: 20, LEU: 18
                        LYS: 18, MET: 6, PHE: 8, PRO: 10, SER: 3, THR: 22, TRP: 2
                        TYR: 10, VAL: 22
-
-Done!
 ```
 
 ## Directory and files
