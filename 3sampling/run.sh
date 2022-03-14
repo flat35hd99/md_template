@@ -5,6 +5,8 @@ module purge
 source $prefix/util/load_amber_gpu
 
 PMEMD=pmemd.cuda
+CPPTRAJ=cpptraj.cuda
+
 run=$( printf %02d $1 )
 output=$prefix/3sampling/output/${run}
 
@@ -17,6 +19,7 @@ coodinates=$prefix/2equilibrium/output/$run/npt/md.rst
 for step in pre_sampling_0 pre_sampling_1 sampling;do
   mkdir -p $output/$step
   cd $output/$step
+
   ${PMEMD} \
     -O \
     -i $prefix/3sampling/input/${step}.input \
@@ -28,6 +31,9 @@ for step in pre_sampling_0 pre_sampling_1 sampling;do
     -x md.crd.nc \
     -inf md.info \
     -l md.log
+
+  ${CPPTRAJ} -i $prefix/3sampling/input/cpptraj
+
   coodinates=$output/$step/md.rst # Update initial structure for the next step
 done
 
