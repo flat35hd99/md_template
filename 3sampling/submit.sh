@@ -5,4 +5,4 @@ run_end=$2
 
 pjsub -N ytva_smp_${run_start}_${run_end} \
   --bulk --sparam ${run_start}-${run_end} \
-  $YTVA_DARK_PREFIX/3sampling/job.sh
+  $YTVA_DARK_PROTONATED_PREFIX/3sampling/job.sh

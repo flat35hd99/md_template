@@ -6,4 +6,4 @@
 #PJM -S
 #PJM -j
 
-. $YTVA_DARK_PREFIX/1minimization/run.sh
+. $YTVA_DARK_PROTONATED_PREFIX/1minimization/run.sh

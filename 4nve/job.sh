@@ -8,7 +8,7 @@
 #PBS -l select=1:ncpus=8:mpiprocs=1:ompthreads=1:jobtype=gpu:ngpus=1
 #PBS -l walltime=4:00:00
 
-prefix=$YTVA_DARK_PREFIX
+prefix=$YTVA_DARK_PROTONATED_PREFIX
 
 # hostname of Flow Type 2 calculation nodes is cx{number}
 if [[ "$(hostname)" =~ cx ]];then

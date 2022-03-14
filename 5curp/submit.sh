@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prefix=$YTVA_DARK_PREFIX
+prefix=$YTVA_DARK_PROTONATED_PREFIX
 
 run_start=$1
 run_end=$2

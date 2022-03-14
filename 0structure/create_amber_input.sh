@@ -12,7 +12,7 @@ ligand_name=FMN
 charge=-2
 multiplicity=1
 
-prefix=$YTVA_DARK_PREFIX
+prefix=$YTVA_DARK_PROTONATED_PREFIX
 # input file
 gaussian_esp_file=$prefix/FMN/output/B3LYP_dp_19/${ligand_name}.esp
 modified_pdb_file=$prefix/0structure/modifid.pdb

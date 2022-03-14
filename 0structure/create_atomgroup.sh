@@ -4,7 +4,7 @@
 #PJM --mpi proc=1
 #PJM -j
 
-prefix=$YTVA_DARK_PREFIX
+prefix=$YTVA_DARK_PROTONATED_PREFIX
 
 source $prefix/util/load_amber
 module load python/3.7.7

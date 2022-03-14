@@ -6,4 +6,4 @@
 #PJM -S
 #PJM -j
 
-. $YTVA_DARK_PREFIX/2equilibrium/run.sh $PJM_BULKNUM
+. $YTVA_DARK_PROTONATED_PREFIX/2equilibrium/run.sh $PJM_BULKNUM

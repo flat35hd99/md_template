@@ -30,8 +30,8 @@ I wrote `input/atomgroup/whole.dat` by my hand.
 ### Create dimer group file
 
 ```shell
-cd $YTVA_DARK_PREFIX/5curp/input/atomgroup
-python3 ../../utilize_script/get_dimer_residue_group.py $YTVA_DARK_PREFIX/0structure/output/atominfo.dat dimer
+cd $YTVA_DARK_PROTONATED_PREFIX/5curp/input/atomgroup
+python3 ../../utilize_script/get_dimer_residue_group.py $YTVA_DARK_PROTONATED_PREFIX/0structure/output/atominfo.dat dimer
 ```
 
 Note: `utilize_script/get_dimer_residue_group.py` is specific script instead universal. It has many magic number.(assuming FMN and the positions)
@@ -43,7 +43,7 @@ I did it at `0structure` and copy it `input/atomgroup/side.dat`
 ### Create intra group pair file
 
 ```shell
-cd $YTVA_DARK_PREFIX/5curp
+cd $YTVA_DARK_PROTONATED_PREFIX/5curp
 python3 utilize_script/get_self_pair.py input/atomgroup/residue.dat output/group_pair/intra_residue.dat
 python3 utilize_script/get_self_pair.py input/atomgroup/whole.dat output/group_pair/intra_whole.dat
 python3 utilize_script/get_self_pair.py input/atomgroup/dimer_even.dat output/group_pair/intra_dimer_even.dat

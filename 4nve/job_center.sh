@@ -11,7 +11,7 @@ run=${specify_job_id:0:2}
 smp=${specify_job_id:2:1}
 
 # Set appropriate environment
-prefix=$YTVA_DARK_PREFIX
+prefix=$YTVA_DARK_PROTONATED_PREFIX
 
 module purge
 source $prefix/util/load_amber_on_cloud
