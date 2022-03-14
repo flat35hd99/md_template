@@ -11,7 +11,7 @@
 
 ## Usage
 
-Run `jsub job.sh`
+Run `pjsub -N yd-1`
 
 ## Execution time
 
