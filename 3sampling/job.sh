@@ -4,7 +4,6 @@
 #PJM -L elapse=48:00:00
 #PJM --mpi proc=1
 #PJM -S
-#PJM -j
 
 prefix=${YTVA_DARK_PROTONATED_PREFIX}
 
