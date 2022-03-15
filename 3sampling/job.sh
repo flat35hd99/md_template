@@ -1,4 +1,4 @@
-#!/bin/sh -xeu
+#!/bin/sh -eu
 #PJM -L rscgrp=cx-share
 #PJM -L gpu=1
 #PJM -L elapse=48:00:00

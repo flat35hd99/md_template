@@ -1,9 +1,8 @@
-#!/bin/sh -xeu
+#!/bin/sh -eu
 #PJM -L rscgrp=cl-share
 #PJM -L elapse=03:00:00
 #PJM --mpi proc=1
 #PJM -S
-#PJM -j
 
 # Get run and sampling number
 # specify_job_id should be defined by submitter

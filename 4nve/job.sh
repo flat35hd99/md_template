@@ -1,10 +1,9 @@
-#!/bin/sh -xeu
+#!/bin/sh -eu
 #PJM -L rscgrp=cx-share
 #PJM -L gpu=1
 #PJM -L elapse=01:00:00
 #PJM --mpi proc=1
 #PJM -S
-#PJM -j
 #PBS -l select=1:ncpus=8:mpiprocs=1:ompthreads=1:jobtype=gpu:ngpus=1
 #PBS -l walltime=4:00:00
 

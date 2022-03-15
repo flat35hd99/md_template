@@ -1,10 +1,9 @@
-#!/bin/sh -xeu
+#!/bin/sh -eu
 #PJM -L rscgrp=cx-share
 #PJM -L gpu=1
 #PJM -L elapse=00:30:00
 #PJM --mpi proc=1
 #PJM -S
-#PJM -j
 
 prefix=$YTVA_DARK_PROTONATED_PREFIX
 
