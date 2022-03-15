@@ -1,7 +1,7 @@
 # This cpptraj input file is used in "output/sampling_number/step_name/"
-parm ../../../../0structure/output/system.dry.prmtop
+parm ../../../../0structure/output/system.prmtop
 trajin md.crd.nc
-reference ../../../../system.dry.crd [crd]
+reference ../../../../0structure/output/system.crd [crd]
 
 # According to example of part V, chapter 32, section 11, item 83 Amber 20 reference
 unwrap :1-255
