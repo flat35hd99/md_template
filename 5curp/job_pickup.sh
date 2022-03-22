@@ -11,7 +11,7 @@ run=${specify_job_id:0:2}
 smp=${specify_job_id:2:1}
 
 # Set appropriate environment
-prefix=$YTVA_DARK_PROTONATED_PREFIX
+prefix=$TEMPLATE_PROJECT_PREFIX
 
 module purge
 source $prefix/util/load_curp

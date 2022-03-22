@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 
 # Usage
-# python3 get_dimer_residue_group.py $YTVA_DARK_PROTONATED_PREFIX/0structure/output/atominfo.dat dimer
+# python3 get_dimer_residue_group.py $TEMPLATE_PROJECT_PREFIX/0structure/output/atominfo.dat dimer
 
 def get_dictionaries(df):
     # return {name: "residue_name", atoms: [2,3,4,5]}

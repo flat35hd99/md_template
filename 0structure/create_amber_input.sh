@@ -21,7 +21,7 @@ multiplicity=1
 # ---------------------
 # Files and directories
 # ---------------------
-prefix=$YTVA_DARK_PROTONATED_PREFIX
+prefix=$TEMPLATE_PROJECT_PREFIX
 
 # input file
 gaussian_esp_file=$prefix/FMN/output/B3LYP_dp_5/${ligand_name}.esp

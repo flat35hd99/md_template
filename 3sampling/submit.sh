@@ -5,4 +5,4 @@ run_end=$2
 
 pjsub -N yd_3_${run_start}_${run_end} \
   --bulk --sparam ${run_start}-${run_end} \
-  $YTVA_DARK_PROTONATED_PREFIX/3sampling/job.sh
+  $TEMPLATE_PROJECT_PREFIX/3sampling/job.sh

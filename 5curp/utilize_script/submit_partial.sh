@@ -1,6 +1,6 @@
 #!/bin/bash
 
-prefix=$YTVA_DARK_PROTONATED_PREFIX
+prefix=$TEMPLATE_PROJECT_PREFIX
 
 if [ -z "$2" ];then echo "check arguments";exit 1; fi
 

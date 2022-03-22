@@ -1,7 +1,7 @@
 #!/bin/sh
 #PBS -l select=1:ncpus=1:mpiprocs=1:ompthreads=1:jobtype=core
 #PBS -l walltime=24:00:00
-prefix=$YTVA_DARK_PROTONATED_PREFIX
+prefix=$TEMPLATE_PROJECT_PREFIX
 
 if [ "$PBS_O_WORKDIR" ]; then
   cd ${PBS_O_WORKDIR}

@@ -7,7 +7,7 @@
 #PJM -S
 #PJM -j
 
-prefix=$YTVA_DARK_PROTONATED_PREFIX
+prefix=$TEMPLATE_PROJECT_PREFIX
 
 module purge
 source $prefix/util/load_curp

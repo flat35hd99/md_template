@@ -5,7 +5,7 @@ for i in `seq 0 50`;do
     run=${job_id:0:2}
     sample=${job_id:2:1}
     for group_type in "inter_residue" "inter_side" "intra_dimer_even" "intra_dimer_odd" "intra_residue" "intra_whole"; do
-        cp $YTVA_DARK_PROTONATED_PREFIX/5curp/output/$group_type/${run}_${sample}/conductivity.dat \
-           $YTVA_DARK_PROTONATED_PREFIX/6analyse/input/$group_type/${run}_${sample}
+        cp $TEMPLATE_PROJECT_PREFIX/5curp/output/$group_type/${run}_${sample}/conductivity.dat \
+           $TEMPLATE_PROJECT_PREFIX/6analyse/input/$group_type/${run}_${sample}
     done
 done
