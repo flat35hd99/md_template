@@ -1,6 +1,6 @@
-# YtvA project(dark)
+# TEMPLATE_SYSTEM_NAME
 
-YtvA is one of LOV proteins. This protein is 
+<!-- Write details of your system -->
 
 ## Requirements
 
