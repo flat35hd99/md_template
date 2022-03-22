@@ -8,8 +8,9 @@ nstlim=1000000, ! the number of steps(0.5fs * 1000000 = 500ps)
 cut=9.0,        ! Cutoff of nonbonded interactions
 
 ntr=0,   ! Don't restrict
-ntc=1,   ! no SHAKE constraints
-ntf=1,   ! no ignore of any interactions
+ntc=2,   ! but SHAKE constraints and some options are available
+ntf=2,   ! Ignore bonded interaction with hydrogens
+noshakemask = '', ! Ignore SHAKE mask. like ':1-36'
 
 ntpr=2500,     ! Print energies every ntpr steps
 ntwprt=4144,   ! Write only coodinates and velocities of atoms from 1 to 4144
