@@ -1,8 +1,9 @@
 on:
   workflow_dispatch:
     inputs:
-      project_prefix:
-        description: 'Path to project'
+      project_prefix_variable:
+        description: 'Variable name to point to your project path'
+        default: 'MY_PROTEIN_PREFIX'
         required: true
       project_name:
         description: 'System name'
