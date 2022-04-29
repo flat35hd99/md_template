@@ -2,8 +2,8 @@ on:
   workflow_dispatch:
     inputs:
       project_prefix_variable:
-        description: 'Variable name to point to your project path'
-        default: 'MY_PROTEIN_PREFIX'
+        description: 'Variable name to point for your project path'
+        default: 'PREFIX_ENVIRONMENTAL_VARIABLE'
         required: true
       project_name:
         description: 'System name'
@@ -16,12 +16,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Insert values
         run: |
-          grep -rl 'TEMPLATE_PROJECT_PREFIX' * | xargs sed -i 's!TEMPLATE_PROJECT_PREFIX!${{ github.event.inputs.project_prefix }}!g'
-          grep -rl 'TEMPLATE_SYSTEM_NAME' * | xargs sed -i -e 's!TEMPLATE_SYSTEM_NAME!${{ github.event.inputs.system_name }}!g'
+          grep -rl 'TEMPLATE_PROJECT_PREFIX' * | xargs sed -i 's!TEMPLATE_PROJECT_PREFIX!${PREFIX}!g'
+          grep -rl 'TEMPLATE_SYSTEM_NAME' * | xargs sed -i -e 's!TEMPLATE_SYSTEM_NAME!${NAME}!g'
           rm .github/workflows/insert_values_to_template.yml
-      - name: Create commit
-        run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        env:
+          PREFIX: ${{ github.event.inputs.project_prefix }}
+          NAME: ${{ github.event.inputs.system_name }}
       - name: Create pull requests
         uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{secrets.PR_PAT}}
