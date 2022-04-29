@@ -8,12 +8,6 @@ on:
       project_name:
         description: 'System name'
         required: true
-      your_name:
-        description: 'Use your name to commit'
-        required: true
-      your_email:
-        description: 'Use your email address to commit'
-        required: true
 
 jobs:
   insert-values:
@@ -27,8 +21,9 @@ jobs:
           rm .github/workflows/insert_values_to_template.yml
       - name: Commit
         run: |
-          git config --local user.name ${{ github.event.inputs.your_name }}
-          git config --local user.email ${{ github.event.inputs.your_email }}
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --local user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git add .
           git commit -m "Fill values in template"
           git push origin main
