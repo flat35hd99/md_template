@@ -6,7 +6,7 @@ run_end=$2
 eval `ssh-agent`
 ssh-add $HOME/.ssh/ims_rsa
 
-target_output_prefix=ims:/home/users/gu5/flat/project/ytva_dark/4nve/output
+target_output_prefix=ims:/home/users/$USER/flat/project/ytva_dark/4nve/output
 
 for i in $( seq $run_start $run_end ); do
     specify_job_id=$(printf %03d $i)

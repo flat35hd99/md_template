@@ -25,7 +25,7 @@ else
     source $prefix/util/load_amber_on_ims
     PMEMD=pmemd.cuda
 
-    work=/ramd/users/gu5/$PBS_JOBID/$RANDOM
+    work=/ramd/users/$USER/$PBS_JOBID/$RANDOM
     mkdir -p $work
 fi
 

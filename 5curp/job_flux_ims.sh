@@ -14,7 +14,7 @@ set -xeu
 
 output=$prefix/5curp/output/$group_type/${run}_${smp}
 # faster directory
-tmp=/ramd/users/gu5/$PBS_JOBID
+tmp=/ramd/users/$USER/$PBS_JOBID
 
 mkdir -p $output
 cd $tmp
