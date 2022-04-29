@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Insert values
         run: |
-          grep -rl 'TEMPLATE_PROJECT_PREFIX' * | xargs sed -i 's!TEMPLATE_PROJECT_PREFIX!${PREFIX}!g'
-          grep -rl 'TEMPLATE_SYSTEM_NAME' * | xargs sed -i -e 's!TEMPLATE_SYSTEM_NAME!${NAME}!g'
+          grep -rl 'TEMPLATE_PROJECT_PREFIX' * | xargs sed -i "s@TEMPLATE_PROJECT_PREFIX@${PREFIX}@g"
+          grep -rl 'TEMPLATE_SYSTEM_NAME' * | xargs sed -i -e "s@TEMPLATE_SYSTEM_NAME@${NAME}@g"
           rm .github/workflows/insert_values_to_template.yml
         env:
           PREFIX: ${{ github.event.inputs.project_prefix }}
