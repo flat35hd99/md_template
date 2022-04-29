@@ -10,7 +10,7 @@ if [[ "$(hostname)" =~ flow ]];then
 else
      for i in `seq $run_start $run_end`;do
      jsub -N ytva_nve_${i} \
-          -v "specify_job_id=${i}" \
+          -v "specify_job_id=${printf %03d $i}" \
           $TEMPLATE_PROJECT_PREFIX/4nve/job.sh
      done
 fi

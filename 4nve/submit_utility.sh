@@ -25,8 +25,11 @@ for i in $( seq $run_start $run_end ); do
     else
         variables="run=${run_number},smp=${sampling_number}"
         
+        # Process coordinate and velocity severally
         jsub --step -N $job_name -v $variables \
             $prefix/4nve/job_center_ims.sh \
             $prefix/5curp/job_pickup_ims.sh
+        jsub --step -N $job_name -v $variables \
+            $prefix/4nve/job_adjust_ims.sh
     fi
 done
