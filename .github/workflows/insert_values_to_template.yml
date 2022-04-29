@@ -20,8 +20,8 @@ jobs:
           grep -rl 'TEMPLATE_SYSTEM_NAME' * | xargs sed -i -e "s@TEMPLATE_SYSTEM_NAME@${NAME}@g"
           rm .github/workflows/insert_values_to_template.yml
         env:
-          PREFIX: ${{ github.event.inputs.project_prefix }}
-          NAME: ${{ github.event.inputs.system_name }}
+          PREFIX: ${{ github.event.inputs.project_prefix_variable }}
+          NAME: ${{ github.event.inputs.project_name }}
       - name: Create pull requests
         uses: peter-evans/create-pull-request@v4
         with:
