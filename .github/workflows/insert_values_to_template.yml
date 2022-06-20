@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Insert values
         run: |
           grep -rl 'TEMPLATE_PROJECT_PREFIX' * | xargs sed -i "s@TEMPLATE_PROJECT_PREFIX@${PREFIX}@g"
@@ -22,7 +23,6 @@ jobs:
         env:
           PREFIX: ${{ github.event.inputs.project_prefix_variable }}
           NAME: ${{ github.event.inputs.project_name }}
+
       - name: Create pull requests
         uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{secrets.PR_PAT}}
