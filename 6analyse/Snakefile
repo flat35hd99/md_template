@@ -12,8 +12,7 @@ rule all:
     input:
         expand("output/conductivity/{group}.csv", group=GROUP_TYPES),
         expand("output/graphs/automated/{group}-{plot}.png", group=GROUP_TYPES, plot=PLOTS_AUTOMATED),
-        expand("output/graphs/residue_and_side/{group}-{plot}.png", group=GROUP_INTERS, plot=PLOTS_RESIDUE_AND_SIDE),
-        "output/README.md","output/index.html"
+        expand("output/graphs/residue_and_side/{group}-{plot}.png", group=GROUP_INTERS, plot=PLOTS_RESIDUE_AND_SIDE)
 
 rule get_ensemble:
     input:
@@ -38,21 +37,3 @@ rule plots_residue_and_side:
         outdir="output/graphs/residue_and_side"
     output: "output/graphs/residue_and_side/{group}-{plot}.png"
     script: "script/residue_and_side/plot_{wildcards.plot}.py"
-
-rule list_graphs_as_md:
-    input:
-        expand("output/graphs/automated/{group}-{plot}.png", group=GROUP_TYPES, plot=PLOTS_AUTOMATED),
-        expand("output/graphs/residue_and_side/{group}-{plot}.png", group=GROUP_INTERS, plot=PLOTS_RESIDUE_AND_SIDE),
-    params:
-        outdir="output"
-    output: "output/README.md"
-    script: "script/create_md_to_show_graphs.py"
-
-rule list_graphs_as_html:
-    input:
-        expand("output/graphs/automated/{group}-{plot}.png", group=GROUP_TYPES, plot=PLOTS_AUTOMATED),
-        expand("output/graphs/residue_and_side/{group}-{plot}.png", group=GROUP_INTERS, plot=PLOTS_RESIDUE_AND_SIDE),
-    params:
-        outdir="output"
-    output: "output/index.html"
-    script: "script/create_html_to_show_graphs.py"
